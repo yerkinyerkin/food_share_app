@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_share_app/core/common/custom_button.dart';
 import 'package:food_share_app/core/common/custom_textfield.dart';
 import 'package:food_share_app/core/styles/color_styles.dart';
+import 'package:food_share_app/features/main_screen/screens/bottom_nav_bar.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -144,7 +145,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     ],
                   ),
                   const SizedBox(height: 8),
-                  CustomButton(text: 'Вход', onTap: (){},color: ColorStyles.primaryColor,colorText: ColorStyles.whiteColor,),
+                  CustomButton(text: 'Вход', onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => BottomNavBar(index: 0)));
+                  },color: ColorStyles.primaryColor,colorText: ColorStyles.whiteColor,),
                   const SizedBox(height: 16),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
