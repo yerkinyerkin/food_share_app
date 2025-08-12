@@ -37,7 +37,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         child: Container(
           height: 64,
           decoration: BoxDecoration(
-            color: const Color(0xFF6F6F6F),           
+            color: const Color(0xFF707070),           
             borderRadius: BorderRadius.circular(30),
             boxShadow: [
               BoxShadow(
