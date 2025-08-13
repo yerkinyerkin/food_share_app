@@ -9,6 +9,25 @@ class MyProfile extends StatefulWidget {
 }
 
 class _MyProfileState extends State<MyProfile> {
+   final _name   = TextEditingController(text: 'Иванова Иванова');
+  final _gender = TextEditingController(text: 'Женский');
+  final _age    = TextEditingController(text: '20 лет');
+  final _email  = TextEditingController(text: 'ivanova@mail.ru');
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _name.dispose();
+    _gender.dispose();
+    _age.dispose();
+    _email.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,10 +77,86 @@ class _MyProfileState extends State<MyProfile> {
                 ],
               ),
               const SizedBox(height: 16),
-              
+              ListView(
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                children:  [
+                  LabeledUnderlineField(label: 'Имя',     controller: _name,   readOnly: true),
+                  LabeledUnderlineField(label: 'Пол',     controller: _gender, readOnly: true),
+                  LabeledUnderlineField(label: 'Возраст', controller: _age,    readOnly: true),
+                  LabeledUnderlineField(label: 'E-mail',  controller: _email,  readOnly: true),
+                ],
+              ),
             ],
           ),
         ),
+      ),
+    );
+  }
+
+}
+
+const _dividerColor = Color(0xFFDB7F00); // orange
+
+class LabeledUnderlineField extends StatelessWidget {
+  const LabeledUnderlineField({
+    super.key,
+    required this.label,
+    this.controller,
+    this.hintText,
+    this.readOnly = false,
+    this.keyboardType,
+    this.onTap,
+  });
+
+  final String label;
+  final TextEditingController? controller;
+  final String? hintText;
+  final bool readOnly;
+  final TextInputType? keyboardType;
+  final VoidCallback? onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric( vertical: 8),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 12),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+              Text(
+                label,
+                style: const TextStyle(
+                  color: ColorStyles.primaryColor,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+              TextFormField(
+                controller: controller,
+                readOnly: readOnly,
+                onTap: onTap,
+                keyboardType: keyboardType,
+                style: const TextStyle(fontSize: 14, color: Colors.black,fontWeight: FontWeight.w400),
+                decoration: InputDecoration(
+                  hintText: hintText,
+                  isDense: true,
+                  contentPadding: EdgeInsets.zero,
+                  border: InputBorder.none,         // no default border
+                  focusedBorder: InputBorder.none,
+                  enabledBorder: InputBorder.none,
+                ),
+              ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 4),
+          Container(height: 2, color: _dividerColor), // orange line
+        ],
       ),
     );
   }
