@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_share_app/core/common/custom_button.dart';
 import 'package:food_share_app/core/styles/color_styles.dart';
+import 'package:food_share_app/features/profile/screens/change_password/screens/change_password.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -28,7 +29,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
+              Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     GestureDetector(onTap: (){
@@ -78,7 +79,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 padding: const EdgeInsets.symmetric(horizontal: 18),
                 child: Column(
                   children: [
-                    CustomButton(text: 'Сменить пароль', onTap: (){},color: ColorStyles.primaryColor,colorText: ColorStyles.whiteColor,),
+                    CustomButton(text: 'Сменить пароль', onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => ChangePassword()));
+                    },color: ColorStyles.primaryColor,colorText: ColorStyles.whiteColor,),
                     CustomButton(text: 'Выйти', onTap: (){},color: ColorStyles.primaryColor,colorText: ColorStyles.whiteColor,),
                   ],
                 ),
