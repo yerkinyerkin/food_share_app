@@ -14,9 +14,15 @@ class _BottomNavBarState extends State<BottomNavBar> {
   late int _currentIndex = widget.index;
 
   final List<Widget> _pages = const [
-    Scaffold(),
-    Scaffold(),
-    Scaffold(),
+    Scaffold(
+      backgroundColor: ColorStyles.whiteColor,
+    ),
+    Scaffold(
+      backgroundColor: ColorStyles.whiteColor,
+    ),
+    Scaffold(
+      backgroundColor: ColorStyles.whiteColor,
+    ),
     ProfileScreen(),
   ];
 
@@ -30,8 +36,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
     return Scaffold(
       backgroundColor: ColorStyles.whiteColor,
       body: IndexedStack(index: _currentIndex, children: _pages),
-
-      // ▼ Custom pill bottom bar (replaces BottomNavigationBar)
       bottomNavigationBar: SafeArea(
         minimum: const EdgeInsets.fromLTRB(16, 0, 16, 12),
         child: Container(
