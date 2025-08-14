@@ -217,16 +217,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
               ),
 
-              const SizedBox(height: 18),
+              const SizedBox(height: 16),
 
               // Согласия и политика
               _policyBlock(),
-
-              const SizedBox(height: 4),
-
-              // Войти 
-              _label('Войти через:'),
-
 
               const SizedBox(height: 8),
               Column(
