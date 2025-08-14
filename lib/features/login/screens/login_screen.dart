@@ -94,57 +94,6 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text('Войти через:',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400,color: ColorStyles.blackColor,),),
-                    ],
-                  ),
-                  const SizedBox(height: 10),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Container(
-                          padding: const EdgeInsets.all(6),
-                          decoration: BoxDecoration(
-                            color: ColorStyles.greyColor,
-                            borderRadius: BorderRadius.circular(40),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Image.asset('assets/images/png/apple_logo.png',width: 35,height: 35,),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 2),
-                                child: Text('Apple',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400,color: ColorStyles.blackColor),),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 10),
-                      Expanded(
-                        child: Container(
-                          padding: const EdgeInsets.all(6),
-                          decoration: BoxDecoration(
-                            color: ColorStyles.greyColor,
-                            borderRadius: BorderRadius.circular(40),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Image.asset('assets/images/png/google_logo.png',width: 35,height: 35,),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 2),
-                                child: Text('Google',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400,color: ColorStyles.blackColor),),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 8),
                   CustomButton(text: 'Вход', onTap: (){
                     Navigator.push(context, MaterialPageRoute(builder: (context) => BottomNavBar(index: 0)));
                   },color: ColorStyles.primaryColor,colorText: ColorStyles.whiteColor,),

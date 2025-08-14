@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_share_app/core/styles/color_styles.dart';
 import 'package:food_share_app/features/start/screens/start_screen.dart';
 
 void main() {
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 65, 77, 64)),
       ),
       home: StartScreen(),
     );
